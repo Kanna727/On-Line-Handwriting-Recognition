@@ -1,7 +1,7 @@
 # On-Line Handwriting Recognition
 Recognizing what user writes on screen using SVM and scikit-learn
 
-> A minor project being done by a team from NIT Patna.
+> _A minor project being done by a team from NIT Patna._
 
 This Project aims towords online character recognition, using machine learning, for the most widely
 used Indic script-Devanagari. It focuses on GUI development for input, its pre-processing and feature
