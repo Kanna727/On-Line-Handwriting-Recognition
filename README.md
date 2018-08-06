@@ -15,10 +15,10 @@ the input coordinates lying in that zone. The dataset is prepared for training t
 based on these feature values.
 
 #### TEAM:
-- [Prasanth Kanna](chitturiprasanth13797@gmail.com)
-- [Shruti Mary](smary25dec@gmail.com)
-- [Karthik Thakur](iamkarthik08@gmail.com)
-- [Priyusha Reddy](priyusha825@gmail.com)
+- [Prasanth Kanna](mailto:chitturiprasanth13797@gmail.com "chitturiprasanth13797@gmail.com")
+- [Shruti Mary](mailto:smary25dec@gmail.com "smary25dec@gmail.com")
+- [Karthik Thakur](mailto:iamkarthik08@gmail.com "iamkarthik08@gmail.com")
+- [Priyusha Reddy](mailto:priyusha825@gmail.com "priyusha825@gmail.com")
 
 #### COORDINATOR:
 - Prof. Rajib Ghosh
