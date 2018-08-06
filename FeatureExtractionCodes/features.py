@@ -1,9 +1,9 @@
-from aspects import aspects
-from curvature import curvature
-from curliness import curliness
-from direction import direction
-from linearity import linearity
-from slope import slope
+from FeatureExtractionCodes.aspects import aspects
+from FeatureExtractionCodes.curvature import curvature
+from FeatureExtractionCodes.curliness import curliness
+from FeatureExtractionCodes.direction import direction
+from FeatureExtractionCodes.linearity import linearity
+from FeatureExtractionCodes.slope import slope
 import math
 
 

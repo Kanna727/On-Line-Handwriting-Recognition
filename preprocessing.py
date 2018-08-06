@@ -1,6 +1,6 @@
-from showpoints import showpoints
-from interpolation import interpolation
-from features import features
+from PreprocessingCodes.showpoints import showpoints
+from PreprocessingCodes.interpolation import interpolation
+from FeatureExtractionCodes.features import features
 import csv
 import os
 

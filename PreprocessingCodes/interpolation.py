@@ -1,8 +1,8 @@
 # cook your code here
 import math
 import numpy as np
-from plotpixels import plotpixels
-from resampling import resampling
+from PreprocessingCodes.plotpixels import plotpixels
+from PreprocessingCodes.resampling import resampling
 
 
 def interpolation(d):

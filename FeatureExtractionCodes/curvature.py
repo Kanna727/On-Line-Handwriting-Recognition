@@ -1,5 +1,5 @@
-from direction import direction
-from direction import calculate_direction
+from FeatureExtractionCodes.direction import direction
+from FeatureExtractionCodes.direction import calculate_direction
 import math
 import numpy as np
 

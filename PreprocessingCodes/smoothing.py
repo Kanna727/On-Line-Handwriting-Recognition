@@ -1,5 +1,5 @@
-from resampling import resampling
-from plotpixels import plotpixels
+from PreprocessingCodes.resampling import resampling
+from PreprocessingCodes.plotpixels import plotpixels
 
 
 # cook your code here

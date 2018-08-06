@@ -1,9 +1,9 @@
-from curliness import curliness
-from linearity import linearity
-from slope import slope
+from FeatureExtractionCodes.curliness import curliness
+from FeatureExtractionCodes.linearity import linearity
+from FeatureExtractionCodes.slope import slope
 import numpy as np
-from direction import direction
-from curvature import curvature
+from FeatureExtractionCodes.direction import direction
+from FeatureExtractionCodes.curvature import curvature
 
 
 def aspects(d):
