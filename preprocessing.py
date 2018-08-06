@@ -4,7 +4,6 @@ from FeatureExtractionCodes.features import features
 import csv
 import os
 
-
 filename = input('Enter the filepath:')
 
 d = showpoints('Original Plot', filename)
