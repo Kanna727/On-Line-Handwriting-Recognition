@@ -21,7 +21,7 @@ filename = os.path.expanduser("~\\Desktop\\training_dataset.csv")
 # print(filename)
 if os.path.exists(filename):
     # print('exists')
-    append_write = 'a' # append if already exists
+    append_write = 'a' # append if already exists...
 else:
     # print('not exist')
     append_write = 'w+' # make a new file if not
