@@ -12,6 +12,8 @@ def preProcessing(filename, folderPath):
     print(filename[0:2])
     target = int(filename[0:2])
     final_features.insert(0, target)
+
+    
     
     # print(final_features)
     # print(len(final_features))
