@@ -30,6 +30,6 @@ def interpolation(d):
         if B[i][2] == 1:  # pen down
             t.append([B[i][0], B[i][1], 1])  # 2d list , no change in coordinates
     d = resampling(t)
-    print(d)
+    #print(d)
     plotpixels('After interpolation', d)
     return t

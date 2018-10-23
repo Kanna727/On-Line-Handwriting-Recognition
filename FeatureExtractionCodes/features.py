@@ -45,14 +45,14 @@ def features(d):
             y_coor.append((stroke[j][1]))
         max_y = max(y_coor)  # max and min values of y coordinate
         min_y = min(y_coor)
-        print(min_x, max_x, min_y, max_y)
+        #print(min_x, max_x, min_y, max_y)
         dx = max_x - min_x  # Width of the grid
         dy = max_y - min_y  # Height of the grid
         l = dx / 3
         m = 2 * (dx / 3)
         a = dy / 3
         b = 2 * (dy / 3)
-        print(min_x, l + min_x, m + min_x, min_y, a + min_y, b + min_y)
+        #print(min_x, l + min_x, m + min_x, min_y, a + min_y, b + min_y)
         for point in stroke:
             if point[0] <= min_x + l:
                 if point[1] <= min_y + a:

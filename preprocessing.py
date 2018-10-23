@@ -4,14 +4,15 @@ from FeatureExtractionCodes.features import features
 import csv
 import os
 
-def preProcessing(filename):
-    d = showpoints('Original Plot', filename)
+def preProcessing(filename, folderPath):
+    d = showpoints('Original Plot', filename, folderPath)
     d = interpolation(d)
     final_features = features(d)
+    print(filename)
     target = int(input("Enter stroke label(For only training):"))
     final_features.insert(0, target)
-    print(final_features)
-    print(len(final_features))
+    # print(final_features)
+    # print(len(final_features))
 
 
     title_row = ['Label']
@@ -36,7 +37,7 @@ def preProcessing(filename):
 path = input('Enter the folder path:')
 
 for f in os.listdir(path):
-    preProcessing(f)
+    preProcessing(f, path)
 
 
 
