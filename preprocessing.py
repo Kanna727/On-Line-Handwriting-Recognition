@@ -5,8 +5,6 @@ from FeatureExtractionCodes.features import features
 import csv
 import os
 
-
-
 def preProcessing(filename, folderPath):
     d = showpoints('Original Plot', filename, folderPath)
     d = interpolation(d)
