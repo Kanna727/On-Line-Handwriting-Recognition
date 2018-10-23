@@ -15,11 +15,11 @@ def showpoints(title, filename, folderPath):
         y.append(float(item[1]))
 
     d = [[float(y) for y in x] for x in d]
-    plt.axis([0, 1440, 2560, 0])
+    # plt.axis([0, 1440, 2560, 0])
 
-    plt.scatter(x, y, s=1)
-    plt.title(title)
-    plt.show()
+    # plt.scatter(x, y, s=1)
+    # plt.title(title)
+    # plt.show()
     return d
 
 
