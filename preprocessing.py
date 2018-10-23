@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 from PreprocessingCodes.showpoints import showpoints
 from PreprocessingCodes.interpolation import interpolation
 from FeatureExtractionCodes.features import features
@@ -13,11 +14,11 @@ target = int(input("Enter stroke label(For only training):"))
 final_features.insert(0, target)
 print(final_features)
 print(len(final_features))
-
+#'/home/karthik/Documents/vscode/minorproject/On-Line-Handwriting-Recognition/Samples/1.txt'
 title_row = ['Label']
 for i in range(360):
     title_row.append(i + 1)
-filename = os.path.expanduser("~\\Desktop\\training_dataset.csv")
+filename = os.path.expanduser("~//Desktop//training_dataset.csv")
 # print(filename)
 if os.path.exists(filename):
     # print('exists')

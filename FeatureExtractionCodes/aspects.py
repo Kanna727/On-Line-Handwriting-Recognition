@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 from FeatureExtractionCodes.curliness import curliness
 from FeatureExtractionCodes.linearity import linearity
 from FeatureExtractionCodes.slope import slope

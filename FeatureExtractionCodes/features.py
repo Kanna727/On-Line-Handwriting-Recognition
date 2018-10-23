@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 from FeatureExtractionCodes.aspects import aspects
 from FeatureExtractionCodes.curvature import curvature
 from FeatureExtractionCodes.curliness import curliness
