@@ -5,6 +5,8 @@ from FeatureExtractionCodes.features import features
 import csv
 import os
 
+
+
 def preProcessing(filename, folderPath):
     d = showpoints('Original Plot', filename, folderPath)
     d = interpolation(d)
@@ -12,13 +14,8 @@ def preProcessing(filename, folderPath):
     print(filename[0:2])
     target = int(filename[0:2])
     final_features.insert(0, target)
-
-    
-    
     # print(final_features)
     # print(len(final_features))
-
-
     title_row = ['Label']
     for i in range(360):
         title_row.append(i + 1)
@@ -42,7 +39,3 @@ path = input('Enter the folder path:')
 
 for f in os.listdir(path):
     preProcessing(f, path)
-
-
-
-
