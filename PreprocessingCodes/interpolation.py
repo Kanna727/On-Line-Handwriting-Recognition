@@ -32,5 +32,5 @@ def interpolation(d):
             t.append([B[i][0], B[i][1], 1])  # 2d list , no change in coordinates
     d = resampling(t)
     #print(d)
-    plotpixels('After interpolation', d)
+    #plotpixels('After interpolation', d)
     return t

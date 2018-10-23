@@ -41,8 +41,8 @@ def preProcessing(filename, folderPath):
     d = showpoints('Original Plot', filename, folderPath)
     d = interpolation(d)
     final_features = features(d)
-    print(filename)
-    target = int(input("Enter stroke label(For only training):"))
+    print(filename[0:2])
+    target = int(filename[0:2])
     final_features.insert(0, target)
     # print(final_features)
     # print(len(final_features))
@@ -51,7 +51,7 @@ def preProcessing(filename, folderPath):
     title_row = ['Label']
     for i in range(360):
         title_row.append(i + 1)
-    filename = os.path.expanduser("~\\Desktop\\training_dataset.csv")
+    filename = os.path.expanduser("training_dataset.csv")
     # print(filename)
     if os.path.exists(filename):
         # print('exists')
