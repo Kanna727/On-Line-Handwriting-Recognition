@@ -15,6 +15,8 @@ final_features.insert(0, target)
 print(final_features)
 print(len(final_features))
 #'/home/karthik/Documents/vscode/minorproject/On-Line-Handwriting-Recognition/Samples/1.txt'
+
+
 title_row = ['Label']
 for i in range(360):
     title_row.append(i + 1)
