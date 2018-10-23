@@ -53,7 +53,7 @@ def smoothing(d, div, filename):  # d is a 2d list, div is 4
         t[i][0] = round(avgx / b)
         t[i][1] = round(avgy / b)
         t[i][2] = d[i][2]
-    print(t)
+    #print(t)
     d = resampling(t)  # updating matrix after smoothing and resampling
     s = len(d)
     # fid=open(filename,"w+") #upadted coordinate file

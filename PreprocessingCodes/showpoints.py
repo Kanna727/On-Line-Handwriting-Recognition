@@ -2,11 +2,11 @@
 import matplotlib.pyplot as plt
 
 
-def showpoints(title, filename):
+def showpoints(title, filename, folderPath):
     x = []
     y = []
     d = []
-    with open(filename) as f:
+    with open(folderPath+'\\'+filename) as f:
         content = f.readlines()
     # you may also want to remove whitespace characters like `\n` at the end of each line
     content = [z.strip().split(',') for z in content]
