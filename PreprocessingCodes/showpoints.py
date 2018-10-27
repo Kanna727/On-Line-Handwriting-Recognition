@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 import matplotlib.pyplot as plt
 
 
@@ -8,8 +9,9 @@ def showpoints(title, filename, folderPath):
     with open(folderPath+'\\'+filename) as f:
         content = f.readlines()
     # you may also want to remove whitespace characters like `\n` at the end of each line
-    content = [x.strip().split(',') for x in content]
+    content = [z.strip().split(',') for z in content]
     for item in content:
+        #print("x= ",x)
         d.append(item)
         x.append(float(item[0]))
         y.append(float(item[1]))

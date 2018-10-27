@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 from PreprocessingCodes.showpoints import showpoints
 from PreprocessingCodes.interpolation import interpolation
 from FeatureExtractionCodes.features import features
@@ -13,8 +14,6 @@ def preProcessing(filename, folderPath):
     final_features.insert(0, target)
     # print(final_features)
     # print(len(final_features))
-
-
     title_row = ['Label']
     for i in range(360):
         title_row.append(i + 1)
@@ -38,7 +37,3 @@ path = input('Enter the folder path:')
 
 for f in os.listdir(path):
     preProcessing(f, path)
-
-
-
-

@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 def resampling(t):
     b = t
     b_size = len(b)

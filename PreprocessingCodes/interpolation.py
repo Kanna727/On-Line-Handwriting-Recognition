@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 # cook your code here
 import math
 import numpy as np

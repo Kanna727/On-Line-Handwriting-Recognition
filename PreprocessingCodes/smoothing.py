@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 from PreprocessingCodes.resampling import resampling
 from PreprocessingCodes.plotpixels import plotpixels
 
