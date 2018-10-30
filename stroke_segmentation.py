@@ -8,7 +8,10 @@ strokesList=[]
 tempStrokeList=[]
 strokeLabelsList = []
 
-path = input('Enter the file path:')
+folderPath = 'C:\\Users\\DEDSEC\\Documents\\VSCode\\Minor Project\\On-Line-Handwriting-Recognition\\Letter Test Samples\\Working'
+
+fileName = input('Enter the file name:')
+path = folderPath + '\\'+ fileName
 
 with open(path) as f:
     content = f.readlines()

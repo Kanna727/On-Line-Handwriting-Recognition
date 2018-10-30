@@ -31,7 +31,7 @@ clf.fit(x, y)
 ### Training Part Ends ###
 
 ### Testing Part Starts ###
-folderPath = input("Enter folder path: ")
+folderPath = 'C:\\Users\\DEDSEC\\Documents\\VSCode\\Minor Project\\On-Line-Handwriting-Recognition\\Test Samples\\Working'
 fileName = input("Enter file name: ")
 
 features = getFeatures(folderPath, fileName)
