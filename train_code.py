@@ -36,14 +36,14 @@ lab_enc = preprocessing.LabelEncoder()
 clf = SVC(C=1.0, kernel='poly',degree=3, gamma=2)
 clf.fit(x, y) 
 
-# folderPath = input("Enter folder path: ")
-# fileName = input("Enter file name: ")
+folderPath = input("Enter folder path: ")
+fileName = input("Enter file name: ")
 
-# features = getFeatures(folderPath, fileName)
-
-# print(clf.predict([features]))
+features = getFeatures(folderPath, fileName)
+print(clf.predict([features]))
 print(clf.score(x,y))
 
+"/home/karthik/Documents/vscode/minorproject/On-Line-Handwriting-Recognition/Samples"
 
 
 
