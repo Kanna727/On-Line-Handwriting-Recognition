@@ -9,7 +9,7 @@ def preProcessing(filename, folderPath):
     d = showpoints('Original Plot', filename, folderPath)
     d = interpolation(d)
     final_features = features(d)
-    print(filename[0:2])
+    #print(filename[0:2])
     target = int(filename[0:2])
     final_features.insert(0, target)
     # print(final_features)
