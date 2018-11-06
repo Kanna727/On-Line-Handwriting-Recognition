@@ -17,7 +17,7 @@ def getFeatures(folderPath, filename):
     return final_features
 
 ### Training Part Starts ### 
-x=pd.read_csv("training_dataset.csv")
+x=pd.read_csv("training_dataset_telugu.csv")
 c = np.array(x)
 y = c[:,0]
 x.drop(["Class"], axis=1,inplace=True)
@@ -30,13 +30,6 @@ clf = SVC(C=1.0, kernel='poly',degree=3, gamma=2)
 clf.fit(x, y) 
 ### Training Part Ends ###
 
-<<<<<<< HEAD
-folderPath = input("Enter folder path: ")
-fileName = input("Enter file name: ")
-
-features = getFeatures(folderPath, fileName)
-print(clf.predict([features]))
-=======
 ### Testing Part Starts ###
 folderPath = 'C:\\Users\\DEDSEC\\Documents\\VSCode\\Minor Project\\On-Line-Handwriting-Recognition\\Test Samples\\Working'
 fileName = input("Enter file name: ")
@@ -46,7 +39,6 @@ result = clf.predict([features])
 print(int(result[0]))
 ### Testing Part Ends ###
 
->>>>>>> 0d22a1e0740bd101bec3804a7b9188c0405fbe5c
 print(clf.score(x,y))
 
 "/home/karthik/Documents/vscode/minorproject/On-Line-Handwriting-Recognition/Samples"
