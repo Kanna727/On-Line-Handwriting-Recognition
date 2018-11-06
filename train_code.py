@@ -17,7 +17,7 @@ def getFeatures(folderPath, filename):
     return final_features
 
 ### Training Part Starts ### 
-x=pd.read_csv("training_dataset.csv")
+x=pd.read_csv("training_dataset_telugu.csv")
 c = np.array(x)
 y = c[:,0]
 x.drop(["Class"], axis=1,inplace=True)

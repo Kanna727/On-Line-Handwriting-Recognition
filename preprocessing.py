@@ -17,7 +17,7 @@ def preProcessing(filename, folderPath):
     title_row = ['Label']
     for i in range(360):
         title_row.append(i + 1)
-    filename = os.path.expanduser("training_dataset.csv")
+    filename = os.path.expanduser("training_dataset_telugu.csv")
     # print(filename)
     if os.path.exists(filename):
         # print('exists')
