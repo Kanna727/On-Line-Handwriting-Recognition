@@ -17,7 +17,15 @@ def getFeatures(folderPath, filename):
     return final_features
 
 ### Training Part Starts ### 
-x=pd.read_csv("training_dataset_telugu.csv")
+index = input("Select the language to train:\n1)Telugu\n2)Hindi\n")
+if (index=='1'):
+    string  = "training_dataset_telugu.csv"
+elif (index=='2'):
+    string = "training_dataset.csv"
+else:
+    print("wrong output")
+    exit()
+x=pd.read_csv(string)
 c = np.array(x)
 y = c[:,0]
 x.drop(["Class"], axis=1,inplace=True)
@@ -31,12 +39,12 @@ clf.fit(x, y)
 ### Training Part Ends ###
 
 ### Testing Part Starts ###
-folderPath = 'C:\\Users\\DEDSEC\\Documents\\VSCode\\Minor Project\\On-Line-Handwriting-Recognition\\Test Samples\\Working'
-fileName = input("Enter file name: ")
+# folderPath = 'C:\\Users\\DEDSEC\\Documents\\VSCode\\Minor Project\\On-Line-Handwriting-Recognition\\Test Samples\\Working'
+# fileName = input("Enter file name: ")
 
-features = getFeatures(folderPath, fileName)
-result = clf.predict([features])
-print(int(result[0]))
+# features = getFeatures(folderPath, fileName)
+# result = clf.predict([features])
+# print(int(result[0]))
 ### Testing Part Ends ###
 
 print(clf.score(x,y))

@@ -10,7 +10,9 @@ def showpoints(title, filename, folderPath):
     with open(folderPath+'\\'+filename) as f:
         # f.seek(0, os.SEEK_CUR)
         # f.truncate()
-        content = f.readlines()
+        lines = (line.rstrip() for line in f)
+        content = list(line for line in lines if line)
+        # content = f.readlines()
     # you may also want to remove whitespace characters like `\n` at the end of each line
     content = [z.strip().split(',') for z in content]
     for item in content:

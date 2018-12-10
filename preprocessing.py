@@ -6,6 +6,7 @@ import csv
 import os
 
 def preProcessing(filename, folderPath):
+    print(filename)
     d = showpoints('Original Plot', filename, folderPath)
     d = interpolation(d)
     final_features = features(d)
