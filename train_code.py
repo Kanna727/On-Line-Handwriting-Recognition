@@ -49,6 +49,7 @@ clf.fit(x, y)
 
 print(clf.score(x,y))
 
+"/home/karthik/Documents/vscode/minorproject/On-Line-Handwriting-Recognition/Samples"
 
 
 
