@@ -9,12 +9,12 @@ from PreprocessingCodes.showpoints import showpoints
 from PreprocessingCodes.interpolation import interpolation
 from FeatureExtractionCodes.features import features
 
-def getFeatures(folderPath, filename):
-    d = showpoints('Original Plot', filename, folderPath)
-    print(d)
-    d = interpolation(d)
-    final_features = features(d)
-    return final_features
+# def getFeatures(folderPath, filename):
+#     d = showpoints('Original Plot', filename, folderPath)
+#     print(d)
+#     d = interpolation(d)
+#     final_features = features(d)
+#     return final_features
 
 ### Training Part Starts ### 
 index = input("Select the language to train:\n1)Telugu\n2)Hindi\n")
@@ -48,8 +48,6 @@ clf.fit(x, y)
 ### Testing Part Ends ###
 
 print(clf.score(x,y))
-
-"/home/karthik/Documents/vscode/minorproject/On-Line-Handwriting-Recognition/Samples"
 
 
 
