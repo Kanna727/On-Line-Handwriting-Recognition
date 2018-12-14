@@ -115,11 +115,18 @@ def file():
             os.mkdir(target)
 
         f = request.get_json(['COORDINATES'])
+
+        coor = f['COORDINATES']
+
+        final_coor = []
+        for item in coor:
+            final_coor.append(item['coordinates'])
     
+        print(final_coor)
 
-        print('request',request,file=sys.stderr)
+        # print('request',request,file=sys.stderr)
 
-        print('file',f,file=sys.stderr)
+        # print('file',f,file=sys.stderr)
 
         # destination="/".join([target,f.filename])
 
