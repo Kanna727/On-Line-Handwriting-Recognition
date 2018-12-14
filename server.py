@@ -114,12 +114,12 @@ def file():
 
             os.mkdir(target)
 
-        f = request.json
+        f = request.get_json(['COORDINATES'])
     
 
-        # print('request',request,file=sys.stderr)
+        print('request',request,file=sys.stderr)
 
-        # print('file',f,file=sys.stderr)
+        print('file',f,file=sys.stderr)
 
         # destination="/".join([target,f.filename])
 
