@@ -117,9 +117,9 @@ def file():
         f = request.json
     
 
-        print('request',request,file=sys.stderr)
+        # print('request',request,file=sys.stderr)
 
-        print('file',f,file=sys.stderr)
+        # print('file',f,file=sys.stderr)
 
         # destination="/".join([target,f.filename])
 
@@ -128,6 +128,8 @@ def file():
         # f.save(secure_filename(target))
 
         # f.save(destination)
+
+        print(type(f))
 
         response={}
 
