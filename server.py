@@ -114,19 +114,20 @@ def file():
 
             os.mkdir(target)
 
-        f = request.files['file']
+        f = request.json
+    
 
-        # print('request',request,file=sys.stderr)
+        print('request',request,file=sys.stderr)
 
-        # print('file',f,file=sys.stderr)
+        print('file',f,file=sys.stderr)
 
-        destination="/".join([target,f.filename])
+        # destination="/".join([target,f.filename])
 
         # print('destination',destination,file=sys.stderr)
 
         # f.save(secure_filename(target))
 
-        f.save(destination)
+        # f.save(destination)
 
         response={}
 
