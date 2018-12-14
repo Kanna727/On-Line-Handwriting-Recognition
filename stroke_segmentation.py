@@ -38,4 +38,4 @@ def strokeSeg(content):
 
     strokeLabelsList.sort()
 
-    print(strokeLabelsList)
+    return strokeLabelsList

@@ -10,6 +10,8 @@ import sys
 
 from flask import request,jsonify,make_response
 
+from stroke_segmentation import strokeSeg
+
 # from werkzeug import secure_filename
 
 app = flask.Flask(__name__)
@@ -122,7 +124,7 @@ def file():
         for item in coor:
             final_coor.append(item['coordinates'])
     
-        print(final_coor)
+        result = strokeSeg(final_coor)
 
         # print('request',request,file=sys.stderr)
 
@@ -136,11 +138,11 @@ def file():
 
         # f.save(destination)
 
-        print(type(f))
+        print(result)
 
         response={}
 
-        response['author']="karthik"
+        response['result']=result
 
         return _corsify_actual_response(jsonify(response))
 
