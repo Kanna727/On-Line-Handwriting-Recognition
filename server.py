@@ -10,7 +10,7 @@ import sys
 
 from flask import request,jsonify,make_response
 
-from werkzeug import secure_filename
+# from werkzeug import secure_filename
 
 app = flask.Flask(__name__)
 
@@ -20,7 +20,7 @@ APP_ROUTE=os.path.dirname(os.path.abspath(__file__))
 
 #loading my model
 
-model = pickle.load(open("model.pkl","rb"),encoding="latin1")
+# model = pickle.load(open("model.pkl","rb"),encoding="latin1")
 
 # model = pickle.load(open("model.pkl","rb"))
 
@@ -44,19 +44,19 @@ def index():
 
     # feature_array = request.get_json()['feature_array']
 
-    feature_array=[float(i) for i in '7.4,0.66,0,1.8,0.075,13,40,0.9978,3.51,0.56,9.4'.split(",")]
+    # feature_array=[float(i) for i in '7.4,0.66,0,1.8,0.075,13,40,0.9978,3.51,0.56,9.4'.split(",")]
 
     #creating a response object
 
     #storing the model's prediction in the object
 
-    response = {}
+    # response = {}
 
-    response['predictions'] = model.predict([feature_array]).tolist()
+    # response['predictions'] = model.predict([feature_array]).tolist()
 
     #returning the response object as json
 
-    return flask.jsonify(response)
+    return flask.jsonify("hello")
 
 
 
