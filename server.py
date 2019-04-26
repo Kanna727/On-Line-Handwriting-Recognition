@@ -109,30 +109,31 @@ def file():
 
     # #returning the response object as json
 
-   ''' if request.method == "OPTIONS": # CORS preflight
+   # if request.method == "OPTIONS": # CORS preflight
 
-        return _build_cors_prelight_response()
+    #    return _build_cors_prelight_response()
 
-    elif request.method=="POST" : '''
+    #elif request.method=="POST" :
+   
 
-        target=os.path.join(APP_ROUTE,'files/')
+    target=os.path.join(APP_ROUTE,'files/')
 
         # print('target',target,file=sys.stderr)
 
-        if not os.path.isdir(target):
+    if not os.path.isdir(target):
 
-            os.mkdir(target)
+        os.mkdir(target)
 
-        f = request.get_json(['COORDINATES'])
+    f = request.get_json(['COORDINATES'])
 
-        coor = f['COORDINATES']
+    coor = f['COORDINATES']
 
-        final_coor = []
-        for item in coor:
-            final_coor.append(item['coordinates'])
+    final_coor = []
+    for item in coor:
+        final_coor.append(item['coordinates'])
     
-        result1 = strokeSeg(final_coor)
-        return result1
+    result1 = strokeSeg(final_coor)
+    return result1
         
 
         # print('request',request,file=sys.stderr)
@@ -158,6 +159,7 @@ def file():
 
 
 @app.route('/back',methods=['GET','POST','OPTIONS']))
+
 def background():
      if request.method == "OPTIONS": # CORS preflight
 
