@@ -12,11 +12,11 @@ from flask import request,jsonify,make_response
 
 from stroke_segmentation import strokeSeg
 
-from rq import Queue
+#from rq import Queue
 
-from worker import conn
+#from worker import conn
 
-from utils import count_words_at_url
+#from utils import count_words_at_url
 
 
 # from werkzeug import secure_filename
@@ -109,11 +109,11 @@ def file():
 
     # #returning the response object as json
 
-   # if request.method == "OPTIONS": # CORS preflight
+   if request.method == "OPTIONS": # CORS preflight
 
-    #    return _build_cors_prelight_response()
+       return _build_cors_prelight_response()
 
-    #elif request.method=="POST" :
+   elif request.method=="POST" :
    
 
     target=os.path.join(APP_ROUTE,'files/')
@@ -131,9 +131,17 @@ def file():
     final_coor = []
     for item in coor:
         final_coor.append(item['coordinates'])
+    yield 1
+    result = strokeSeg(final_coor)
+    print(result)
+
+    response={}
+
+    response['result']=result
+
+    return _corsify_actual_response(jsonify(response))
     
-    result1 = strokeSeg(final_coor)
-    return result1
+   
         
 
         # print('request',request,file=sys.stderr)
@@ -148,17 +156,10 @@ def file():
 
         # f.save(destination)
 
-       ''' print(result)
-
-        response={}
-
-        response['result']=result
-
-        return _corsify_actual_response(jsonify(response))'''
-    
+       
 
 
-@app.route('/back',methods=['GET','POST','OPTIONS']))
+'''@app.route('/back',methods=['GET','POST','OPTIONS']))
 
 def background():
      if request.method == "OPTIONS": # CORS preflight
@@ -174,7 +175,7 @@ def background():
 
           response['result']=result
 
-          return _corsify_actual_response(jsonify(response))
+          return _corsify_actual_response(jsonify(response))'''
 
 
 def _build_cors_prelight_response():
