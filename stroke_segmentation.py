@@ -52,8 +52,6 @@ def strokeSeg(content):
       letter[0] =next(fo)
     # print(next(fo), end='')
       break
-
-
     fo.close()
 
 # compareLabel(strokeLabelsList)
