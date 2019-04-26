@@ -116,30 +116,30 @@ def file():
    elif request.method=="POST" :
    
 
-    target=os.path.join(APP_ROUTE,'files/')
+     target=os.path.join(APP_ROUTE,'files/')
 
         # print('target',target,file=sys.stderr)
 
-    if not os.path.isdir(target):
+     if not os.path.isdir(target):
 
         os.mkdir(target)
 
-    f = request.get_json(['COORDINATES'])
+     f = request.get_json(['COORDINATES'])
 
-    coor = f['COORDINATES']
+     coor = f['COORDINATES']
 
-    final_coor = []
-    for item in coor:
+     final_coor = []
+     for item in coor:
         final_coor.append(item['coordinates'])
-    yield 1
-    result = strokeSeg(final_coor)
-    print(result)
+     yield 1
+     result = strokeSeg(final_coor)
+     print(result)
 
-    response={}
+     response={}
 
-    response['result']=result
+     response['result']=result
 
-    return _corsify_actual_response(jsonify(response))
+     return _corsify_actual_response(jsonify(response))
     
    
         
