@@ -131,7 +131,7 @@ def file():
      final_coor = []
      for item in coor:
         final_coor.append(item['coordinates'])
-     yield "<br/>"
+     yield [1,2]
      result = strokeSeg(final_coor)
      print(result)
 
