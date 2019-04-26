@@ -49,7 +49,7 @@ def strokeSeg(content):
     for i in fo:
      i=i.rstrip() #returns each line as string removing the last \n character
      if strLabel == i:
-      letter[0] =next(fo)
+      letter[0] =next(fo).rstrip()
     # print(next(fo), end='')
       break
     fo.close()
