@@ -38,4 +38,27 @@ def strokeSeg(content):
 
     strokeLabelsList.sort()
 
-    return strokeLabelsList
+    #return strokeLabelsList
+    strLabel = '.'.join(str(e) for e in strokeLabelsList)
+    print(strLabel)
+
+    fo = open("hindidic.txt", "r",encoding="utf8")
+
+ #letter = ["पुनः पय।स करें।"]
+    letter= ["Try"]
+    for i in fo:
+     i=i.rstrip() #returns each line as string removing the last \n character
+     if strLabel == i:
+      letter[0] =next(fo)
+    # print(next(fo), end='')
+      break
+
+
+    fo.close()
+
+# compareLabel(strokeLabelsList)
+# return strokeLabelsList
+
+    return letter
+
+#print(letter)
