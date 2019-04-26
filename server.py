@@ -12,6 +12,13 @@ from flask import request,jsonify,make_response
 
 from stroke_segmentation import strokeSeg
 
+from rq import Queue
+
+from worker import conn
+
+from utils import count_words_at_url
+
+
 # from werkzeug import secure_filename
 
 app = flask.Flask(__name__)
@@ -102,11 +109,11 @@ def file():
 
     # #returning the response object as json
 
-    if request.method == "OPTIONS": # CORS preflight
+   ''' if request.method == "OPTIONS": # CORS preflight
 
         return _build_cors_prelight_response()
 
-    elif request.method=="POST" :
+    elif request.method=="POST" : '''
 
         target=os.path.join(APP_ROUTE,'files/')
 
@@ -124,7 +131,9 @@ def file():
         for item in coor:
             final_coor.append(item['coordinates'])
     
-        result = strokeSeg(final_coor)
+        result1 = strokeSeg(final_coor)
+        return result1
+        
 
         # print('request',request,file=sys.stderr)
 
@@ -138,14 +147,32 @@ def file():
 
         # f.save(destination)
 
-        print(result)
+       ''' print(result)
 
         response={}
 
         response['result']=result
 
-        return _corsify_actual_response(jsonify(response))
+        return _corsify_actual_response(jsonify(response))'''
+    
 
+
+@app.route('/back',methods=['GET','POST','OPTIONS']))
+def background():
+     if request.method == "OPTIONS": # CORS preflight
+
+        return _build_cors_prelight_response()
+    
+     elif request.method=="POST" :
+          q = Queue(connection=conn)
+        
+          result = q.enqueue(count_words_at_url, 'https://damp-plains-82912.herokuapp.com/search')
+            
+          response={}
+
+          response['result']=result
+
+          return _corsify_actual_response(jsonify(response))
 
 
 def _build_cors_prelight_response():
