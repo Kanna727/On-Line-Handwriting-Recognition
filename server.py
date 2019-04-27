@@ -8,7 +8,7 @@ import os
 
 import sys
 
-from flask import request,jsonify,make_response
+from flask import request,jsonify,make_response,Response
 
 from stroke_segmentation import strokeSeg
 
@@ -92,7 +92,11 @@ def print_int(id):
 @app.route('/search',methods=['GET','POST','OPTIONS'])
 
 def file():
+ def generate():
+    
+   if request.method == "OPTIONS": # CORS preflight
 
+       return _build_cors_prelight_response()
     #getting an array of features from the post request's body
 
     # feature_array = request.get_json()['feature_array']
@@ -108,10 +112,6 @@ def file():
     # print(response['predictions'])
 
     # #returning the response object as json
-
-   if request.method == "OPTIONS": # CORS preflight
-
-       return _build_cors_prelight_response()
 
    elif request.method=="POST" :
    
@@ -134,15 +134,18 @@ def file():
      #result = [1,2]
      #response['result'] = result
      #yield _corsify_actual_response(jsonify(response))
+     yield [1,2]
+        
      result = strokeSeg(final_coor)
      print(result)
+     yield result
 
-     response={}
+     #response={}
 
-     response['result']=result
+     #response['result']=result
 
-     return _corsify_actual_response(jsonify(response))
-    
+     #return _corsify_actual_response(jsonify(response))
+ return Response(generate(),mimetype='JSONArray')        
    
         
 
