@@ -131,9 +131,9 @@ def file():
      final_coor = []
      for item in coor:
         final_coor.append(item['coordinates'])
-     result = [1,2]
-     response['result'] = result
-     yield _corsify_actual_response(jsonify(response))
+     #result = [1,2]
+     #response['result'] = result
+     #yield _corsify_actual_response(jsonify(response))
      result = strokeSeg(final_coor)
      print(result)
 
