@@ -91,7 +91,6 @@ def print_int(id):
 
 @app.route('/search',methods=['GET','POST','OPTIONS'])
 
-def file():
  def generate():
     
    if request.method == "OPTIONS": # CORS preflight
@@ -133,19 +132,17 @@ def file():
         final_coor.append(item['coordinates'])
      #result = [1,2]
      #response['result'] = result
-     #yield _corsify_actual_response(jsonify(response))
-     yield [1,2]
+     #yield _corsify_actual_response(jsonify(response)
         
      result = strokeSeg(final_coor)
-     print(result)
-     yield result
+   
 
-     #response={}
+     response={}
 
-     #response['result']=result
+     response['result']=result
 
-     #return _corsify_actual_response(jsonify(response))
- return Response(generate(),mimetype='JSONArray')        
+     return _corsify_actual_response(jsonify(response))
+       
    
         
 
