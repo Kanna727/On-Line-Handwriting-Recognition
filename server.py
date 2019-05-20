@@ -91,7 +91,7 @@ def print_int(id):
 
 @app.route('/search',methods=['GET','POST','OPTIONS'])
 
- def generate():
+ def file():
     
    if request.method == "OPTIONS": # CORS preflight
 
