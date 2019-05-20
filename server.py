@@ -8,16 +8,9 @@ import os
 
 import sys
 
-from flask import request,jsonify,make_response,Response
+from flask import request,jsonify,make_response
 
 from stroke_segmentation import strokeSeg
-
-#from rq import Queue
-
-#from worker import conn
-
-#from utils import count_words_at_url
-
 
 # from werkzeug import secure_filename
 
@@ -91,11 +84,8 @@ def print_int(id):
 
 @app.route('/search',methods=['GET','POST','OPTIONS'])
 
- def file():
-    
-   if request.method == "OPTIONS": # CORS preflight
+def file():
 
-       return _build_cors_prelight_response()
     #getting an array of features from the post request's body
 
     # feature_array = request.get_json()['feature_array']
@@ -112,39 +102,29 @@ def print_int(id):
 
     # #returning the response object as json
 
-   elif request.method=="POST" :
-   
+    if request.method == "OPTIONS": # CORS preflight
 
-     target=os.path.join(APP_ROUTE,'files/')
+        return _build_cors_prelight_response()
+
+    elif request.method=="POST" :
+
+        target=os.path.join(APP_ROUTE,'files/')
 
         # print('target',target,file=sys.stderr)
 
-     if not os.path.isdir(target):
+        if not os.path.isdir(target):
 
-        os.mkdir(target)
+            os.mkdir(target)
 
-     f = request.get_json(['COORDINATES'])
+        f = request.get_json(['COORDINATES'])
 
-     coor = f['COORDINATES']
+        coor = f['COORDINATES']
 
-     final_coor = []
-     for item in coor:
-        final_coor.append(item['coordinates'])
-     #result = [1,2]
-     #response['result'] = result
-     #yield _corsify_actual_response(jsonify(response)
-        
-     result = strokeSeg(final_coor)
-   
-
-     response={}
-
-     response['result']=result
-
-     return _corsify_actual_response(jsonify(response))
-       
-   
-        
+        final_coor = []
+        for item in coor:
+            final_coor.append(item['coordinates'])
+    
+        result = strokeSeg(final_coor)
 
         # print('request',request,file=sys.stderr)
 
@@ -158,26 +138,14 @@ def print_int(id):
 
         # f.save(destination)
 
-       
+        print(result)
 
+        response={}
 
-'''@app.route('/back',methods=['GET','POST','OPTIONS']))
+        response['result']=result
 
-def background():
-     if request.method == "OPTIONS": # CORS preflight
+        return _corsify_actual_response(jsonify(response))
 
-        return _build_cors_prelight_response()
-    
-     elif request.method=="POST" :
-          q = Queue(connection=conn)
-        
-          result = q.enqueue(count_words_at_url, 'https://damp-plains-82912.herokuapp.com/search')
-            
-          response={}
-
-          response['result']=result
-
-          return _corsify_actual_response(jsonify(response))'''
 
 
 def _build_cors_prelight_response():
@@ -199,4 +167,4 @@ def _corsify_actual_response(response):
     response.headers.add("Access-Control-Allow-Origin", "*")
 
     return response
-#hello
+
