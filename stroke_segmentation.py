@@ -1,6 +1,6 @@
 from PreprocessingCodes.interpolation import interpolation
 from FeatureExtractionCodes.features import features
-#from test_code import predictStrokeLabel
+from test_code import predictStrokeLabel
 import matplotlib.pyplot as plt
 import numpy as np 
 import pandas as pd 
@@ -20,6 +20,18 @@ def strokeSeg(content):
 
     # with open(path) as f:
     #     content = f.readlines()
+    x=pd.read_csv("training_dataset.csv")
+    print(np.isnan(x))
+
+    c = np.array(x)
+    y = c[:,0]
+    x.drop(["Class"], axis=1,inplace=True)
+    a=np.array(x)
+
+    lab_enc = preprocessing.LabelEncoder()
+    clf = SVC(C=1.0, kernel='poly',degree=3, gamma=2)
+    clf.fit(x, y)     
+
 
     content = [z.strip().split(',') for z in content]
     for item in content:
@@ -37,7 +49,7 @@ def strokeSeg(content):
         
         s = interpolation(stroke)
         final_features = features(s)
-        strokeLabel = predictStrokeLabel(final_features)
+        strokeLabel = predictStrokeLabel(final_features,clf)
         print(strokeLabel)
         strokeLabelsList.append(strokeLabel)
 
@@ -64,22 +76,5 @@ def strokeSeg(content):
 
     return letter
     
-x=pd.read_csv("training_dataset.csv")
-print(np.isnan(x))
 
-c = np.array(x)
-y = c[:,0]
-x.drop(["Class"], axis=1,inplace=True)
-a=np.array(x)
-
-lab_enc = preprocessing.LabelEncoder()
-clf = SVC(C=1.0, kernel='poly',degree=3, gamma=2)
-clf.fit(x, y)     
-
-def predictStrokeLabel(featuresList,clf):
-  
-
-    result = clf.predict([featuresList])
-
-    return int(result[0])
 #print(letter)
