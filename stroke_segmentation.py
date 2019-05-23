@@ -1,6 +1,6 @@
 from PreprocessingCodes.interpolation import interpolation
 from FeatureExtractionCodes.features import features
-from test_code import predictStrokeLabel
+#from test_code import predictStrokeLabel
 import matplotlib.pyplot as plt
 import numpy as np 
 import pandas as pd 
@@ -12,7 +12,12 @@ def strokeSeg(content):
     strokesList = []
     tempStrokeList=[]
     strokeLabelsList = []
+    def predictStrokeLabel(featuresList):
+  
 
+       result = clf.predict([featuresList])
+
+       return int(result[0])
     # folderPath = 'C:\\Users\\DEDSEC\\OneDrive\\Documents\\VSCode\\Minor Project\\On-Line-Handwriting-Recognition\\Letter Test Samples\\Working'
 
     # fileName = input('Enter the file name:')
